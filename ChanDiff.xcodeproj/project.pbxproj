@@ -232,13 +232,16 @@
 		2B6205E11BCF1048003220C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = /Applications/Textual.app/Contents/MacOS/Textual;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = "/Applications/Textual.app/Contents/Frameworks/**";
 				HEADER_SEARCH_PATHS = "/Applications/Textual.app/Contents/Headers/**";
 				INFOPLIST_FILE = ChanDiff/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = "/Applications/Textual.app/Contents/Frameworks/**";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = me.rsullivan.apps.textual.ChanDiff;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -251,13 +254,16 @@
 		2B6205E21BCF1048003220C7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = /Applications/Textual.app/Contents/MacOS/Textual;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = "/Applications/Textual.app/Contents/Frameworks/**";
 				HEADER_SEARCH_PATHS = "/Applications/Textual.app/Contents/Headers/**";
 				INFOPLIST_FILE = ChanDiff/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = "/Applications/Textual.app/Contents/Frameworks/**";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = me.rsullivan.apps.textual.ChanDiff;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -285,6 +291,7 @@
 				2B6205E21BCF1048003220C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

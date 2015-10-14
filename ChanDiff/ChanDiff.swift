@@ -16,13 +16,18 @@ class ChanDiff: NSObject, THOPluginProtocol
     }
 
     func userInputCommandInvokedOnClient(client: IRCClient!, commandString: String!, messageString: String!) {
-        let channels = commandString.componentsSeparatedByString(" ")
-        let channel1 = client.findChannel(channels[0])
-        let channel2 = self.masterController().mainWindow.selectedChannel
+        let myChannel = self.masterController().mainWindow.selectedChannel
+        let channelStrings = messageString.componentsSeparatedByString(" ")
+        let channels = [client.findChannel(channelStrings[0])]
+        // TODO: check if findChannel returns nil otherwise it'll crash
 
-        let diff = channel1.memberList.map({
-            channel2.findMember($0.nickname) == nil
-        })
+        var diff = Set(myChannel.memberList as! [IRCUser])
+
+        for channel in channels {
+            diff.intersectInPlace(channel.memberList as! [IRCUser])
+        }
+
+        client.printDebugInformation(diff.map({ $0.nickname! }).sort().description)
     }
 
 }

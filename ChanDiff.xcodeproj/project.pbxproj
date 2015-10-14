@@ -6,9 +6,19 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2B6205E51BCF1060003220C7 /* ChanDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6205E41BCF1060003220C7 /* ChanDiff.swift */; settings = {ASSET_TAGS = (); }; };
+		2B6205E71BCF1117003220C7 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6205E61BCF1117003220C7 /* CoreFoundation.framework */; };
+		2B6205E91BCF111B003220C7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6205E81BCF111B003220C7 /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		2B6205DA1BCF1048003220C7 /* ChanDiff.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChanDiff.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B6205DD1BCF1048003220C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B6205E31BCF105F003220C7 /* ChanDiff-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChanDiff-Bridging-Header.h"; sourceTree = "<group>"; };
+		2B6205E41BCF1060003220C7 /* ChanDiff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChanDiff.swift; sourceTree = "<group>"; };
+		2B6205E61BCF1117003220C7 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		2B6205E81BCF111B003220C7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -16,6 +26,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B6205E91BCF111B003220C7 /* Cocoa.framework in Frameworks */,
+				2B6205E71BCF1117003220C7 /* CoreFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -26,6 +38,7 @@
 			isa = PBXGroup;
 			children = (
 				2B6205DC1BCF1048003220C7 /* ChanDiff */,
+				2B6205EA1BCF1221003220C7 /* Frameworks */,
 				2B6205DB1BCF1048003220C7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,9 +54,28 @@
 		2B6205DC1BCF1048003220C7 /* ChanDiff */ = {
 			isa = PBXGroup;
 			children = (
-				2B6205DD1BCF1048003220C7 /* Info.plist */,
+				2B6205EB1BCF1233003220C7 /* Other */,
+				2B6205E41BCF1060003220C7 /* ChanDiff.swift */,
 			);
 			path = ChanDiff;
+			sourceTree = "<group>";
+		};
+		2B6205EA1BCF1221003220C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2B6205E81BCF111B003220C7 /* Cocoa.framework */,
+				2B6205E61BCF1117003220C7 /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2B6205EB1BCF1233003220C7 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				2B6205DD1BCF1048003220C7 /* Info.plist */,
+				2B6205E31BCF105F003220C7 /* ChanDiff-Bridging-Header.h */,
+			);
+			name = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,6 +104,7 @@
 		2B6205D21BCF1048003220C7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Ryan Sullivan";
 				TargetAttributes = {
@@ -112,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B6205E51BCF1060003220C7 /* ChanDiff.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,12 +232,18 @@
 		2B6205E11BCF1048003220C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = "/Applications/Textual.app/Contents/Headers/**";
 				INFOPLIST_FILE = ChanDiff/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = "/Applications/Textual.app/Contents/Frameworks/**";
 				PRODUCT_BUNDLE_IDENTIFIER = me.rsullivan.apps.textual.ChanDiff;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ChanDiff/ChanDiff-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -211,12 +251,17 @@
 		2B6205E21BCF1048003220C7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = "/Applications/Textual.app/Contents/Headers/**";
 				INFOPLIST_FILE = ChanDiff/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = "/Applications/Textual.app/Contents/Frameworks/**";
 				PRODUCT_BUNDLE_IDENTIFIER = me.rsullivan.apps.textual.ChanDiff;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ChanDiff/ChanDiff-Bridging-Header.h";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
